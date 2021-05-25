@@ -1,0 +1,60 @@
+<section id="body">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3 col-md-2"></div>
+        <div class="col-lg-6 col-md-8 login-box">
+            <!-- <div class="col-lg-12 login-key">
+                <i class="fa fa-key" aria-hidden="true"></i>
+            </div> -->
+            <div class="col-lg-12 login-title text-center">
+                Student Login
+            </div>
+
+            <div class="col-lg-12 login-form">
+                <div class="col-lg-12 login-form">
+                    <form #userlogin="ngForm" (ngSubmit)="userVerify();">
+                        <div class="form-group">
+                            <label class="form-control-label">USERNAME</label>
+                            <input type="text" class="form-control" [(ngModel)]="User.username"  [class.is-valid]='email.valid' [class.is-invalid]='email.invalid && email.touched' name="email" #email="ngModel"[class.invalid]="email.invalid && email.touched" required pattern="^[a-z0-9.%+]+@[a-z0-9.-]+\.[a-z]{2,4}">
+                        </div>
+                        
+                            <div class="col-lg-6 login-btm login-text">
+                                <small class="text-danger" [class.d-none]= "email.valid || email.untouched"> Enter valid email</small>
+                                <!-- Error Message -->
+
+                            </div>
+                        <div class="form-group">
+                            <label class="form-control-label">PASSWORD</label>
+                            <input type="password" [class.is-valid]='password.valid' [class.is-invalid]='password.invalid && password.touched' class="form-control" [(ngModel)]="User.password"  #password='ngModel' name="password" minlength="6" required>
+                        </div>
+                        <div class="col-lg-6 login-btm login-text">
+                            <small class="text-danger" [class.d-none]= "password.valid || password.untouched"> Enter valid password</small>
+                            <!-- Error Message -->
+
+                        </div>
+
+                        <br>
+                        
+                            <div class="col-lg-6 ">
+                                <a href="#" style="text-decoration:none; color: ivory;">Forgot password</a>
+                            </div>
+                        <br>
+                        <div class="col-lg-12 loginbttm">
+                            
+                            <div class="col-lg-6 login-btm login-button  ">
+                                <button type="submit" class="btn btn-outline-primary" [disabled]="userlogin.form.invalid">LOGIN</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-2"></div>
+        </div>
+    </div>
+    </div>
+</section>
+
+
+
+
+
