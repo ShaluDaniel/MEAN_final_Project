@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import{HttpClient} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,10 +9,11 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { StudentLoginComponent } from './student-login/student-login.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
-import { TrainerLoginComponent } from './trainer-login/trainer-login.component';
+
 import { UserComponent } from './user/user.component';
 import {FormsModule} from '@angular/forms';
 import { BlogFormComponent } from './blog-form/blog-form.component';
+import{AuthService} from './auth.service'
 
 
 @NgModule({
@@ -22,16 +24,20 @@ import { BlogFormComponent } from './blog-form/blog-form.component';
     FooterComponent,
     StudentLoginComponent,
     AdminLoginComponent,
-    TrainerLoginComponent,
     UserComponent,
-    BlogFormComponent
+    BlogFormComponent,
+    
+    
+    
+    
+  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

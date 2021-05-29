@@ -25,7 +25,7 @@
                             </div>
                         <div class="form-group">
                             <label class="form-control-label">PASSWORD</label>
-                            <input type="password" [class.is-valid]='password.valid' [class.is-invalid]='password.invalid && password.touched' class="form-control" [(ngModel)]="User.password"  #password='ngModel' name="password" minlength="6" required>
+                            <input type="password" [class.is-valid]='password.valid' [class.is-invalid]='password.invalid && password.touched' class="form-control" [(ngModel)]="User.password"  #password="ngModel" name="password" >
                         </div>
                         <div class="col-lg-6 login-btm login-text">
                             <small class="text-danger" [class.d-none]= "password.valid || password.untouched"> Enter valid password</small>
