@@ -1,19 +1,32 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import { Router } from '@angular/router';
+
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  
+  
+  private _loginUrl = "http://localhost:3000/login";
 
+  userVerify(user:any)
+    {
+      return this.http.post<any>(this._loginUrl, user)
+    }
+  
+     loggedIn()
+    {
+      return !!localStorage.getItem('token')
+    }
+    getToken()
+    {
+      return localStorage.getItem('token')
+    }
+   
   
 
-  userVerify(user:any){
-    return this.http.post<any>("http://localhost3000/login",user)
-    
-   
+  constructor( private http:HttpClient, private router:Router) { }
   }
-
-  constructor( private http:HttpClient) { }
-}
